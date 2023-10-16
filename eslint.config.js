@@ -9,6 +9,7 @@ const prettierConfig = require('eslint-config-prettier');
 
 const vueParser = require('vue-eslint-parser');
 const vue = require('eslint-plugin-vue');
+const vueConfig = require('@qimijoy/eslint-config/configs/vueConfig');
 
 module.exports = [
 	{
@@ -55,6 +56,7 @@ module.exports = [
 		plugins: { vue },
 		rules: {
 			...vue.configs.essential.rules,
+			...vueConfig.rules,
 		},
 	},
 	// Prettier options (must be last!)

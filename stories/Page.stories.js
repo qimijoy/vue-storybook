@@ -1,5 +1,5 @@
 import { within, userEvent } from '@storybook/testing-library';
-import MyPage from './Page.vue';
+import MyPage from './MyPage.vue';
 
 export default {
 	title: 'Example/Page',

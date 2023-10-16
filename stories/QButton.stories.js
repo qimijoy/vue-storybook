@@ -1,48 +1,39 @@
-import QButton from './QButton.vue';
+import QButton from '../components/controls/QButton.vue';
 
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
 	title: 'Example/Button',
 	component: QButton,
 	tags: ['autodocs'],
 	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
 		onClick: {},
-		size: {
-			control: {
-				type: 'select',
-			},
-			options: ['small', 'medium', 'large'],
+		label: {
+			control: 'text',
+		},
+		slim: {
+			control: 'boolean',
 		},
 	},
+	args: {
+		label: 'Hello, world!',
+		slim: false,
+	},
+	render: (args) => ({
+		components: {
+			QButton,
+		},
+		setup() {
+			return { args };
+		},
+		template: `<QButton v-bind="args">{{ args.label }}</QButton>`,
+	}),
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = {
-	args: {
-		primary: true,
-		label: 'Button',
-	},
+	args: {},
 };
 
-export const Secondary = {
+export const PrimarySlim = {
 	args: {
-		label: 'Button',
-	},
-};
-
-export const Large = {
-	args: {
-		size: 'large',
-		label: 'Button',
-	},
-};
-
-export const Small = {
-	args: {
-		size: 'small',
-		label: 'Button',
+		slim: true,
 	},
 };
