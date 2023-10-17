@@ -11,7 +11,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "@eslint/js": "^8.51.0",
     "@qimijoy/browserslist-config": "^1.0.7",
-    "@qimijoy/eslint-config": "^1.2.4",
+    "@qimijoy/eslint-config": "^1.2.5",
     "@qimijoy/prettier-config": "^1.0.1",
     "@storybook/addon-essentials": "^7.4.6",
     "@storybook/addon-interactions": "^7.4.6",
