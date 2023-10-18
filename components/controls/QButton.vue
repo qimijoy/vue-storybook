@@ -1,29 +1,9 @@
 <template>
-	<button v-if="!isLink" type="button" :class="classes" :disabled="disabled" @click="onClickHandler">
-		<span class="q-button__icon-prepend">
-			<slot name="icon-prepend" />
-		</span>
-
-		<span class="q-button__content">
-			<slot />
-		</span>
-
-		<span class="q-button__icon-append">
-			<slot name="icon-append" />
-		</span>
+	<button v-if="!link" type="button" :class="classes" :disabled="disabled" @click="onClickHandler">
+		<slot />
 	</button>
-	<a v-else :href="href" :class="classes" @click="onClickHandler">
-		<span class="q-button__icon-prepend">
-			<slot name="icon-prepend" />
-		</span>
-
-		<span class="q-button__content">
-			<slot />
-		</span>
-
-		<span class="q-button__icon-append">
-			<slot name="icon-append" />
-		</span>
+	<a v-else :href="href" :download="download" :class="classes" @click="onClickHandler">
+		<slot />
 	</a>
 </template>
 
@@ -39,13 +19,17 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
-	isLink: {
+	link: {
 		type: Boolean,
 		default: false,
 	},
 	href: {
 		type: String,
 		default: '',
+	},
+	download: {
+		type: Boolean,
+		default: false,
 	},
 });
 
@@ -59,7 +43,7 @@ const classes = computed(() => ({
 	'q-button': true,
 	'q-button_slim': props.slim,
 	'q-button_disabled': props.disabled,
-	'q-button_link': props.isLink,
+	'q-button_link': props.link,
 }));
 
 const onClickHandler = (event) => {
@@ -117,10 +101,6 @@ const onClickHandler = (event) => {
 		cursor: not-allowed;
 		outline: none;
 		box-shadow: none;
-	}
-
-	&__content {
-		margin: 0 5px;
 	}
 
 	&_link {

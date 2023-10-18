@@ -6,7 +6,7 @@ export default {
 	tags: ['autodocs'],
 	argTypes: {
 		onClick: {},
-		label: {
+		content: {
 			control: 'text',
 		},
 		slim: {
@@ -15,7 +15,10 @@ export default {
 		disabled: {
 			control: 'boolean',
 		},
-		isLink: {
+		link: {
+			control: 'boolean',
+		},
+		download: {
 			control: 'boolean',
 		},
 		href: {
@@ -23,10 +26,11 @@ export default {
 		},
 	},
 	args: {
-		label: 'Hello, world!',
+		content: 'Hello, world!',
 		slim: false,
 		disabled: false,
-		isLink: false,
+		link: false,
+		download: false,
 	},
 	render: (args) => ({
 		components: {
@@ -35,7 +39,7 @@ export default {
 		setup() {
 			return { args };
 		},
-		template: `<QButton v-bind="args">{{ args.label }}</QButton>`,
+		template: `<QButton v-bind="args" v-html="args.content"></QButton>`,
 	}),
 };
 
@@ -57,14 +61,15 @@ export const PrimaryDisabled = {
 
 export const PrimaryLink = {
 	args: {
-		isLink: true,
+		link: true,
 		href: 'https://google.com',
 	},
 };
 
 export const PrimaryLinkDownload = {
 	args: {
-		isLink: true,
+		link: true,
 		href: 'package.json',
+		download: true,
 	},
 };
