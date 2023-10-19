@@ -1,7 +1,7 @@
 import QButton from '../components/controls/QButton.vue';
 
 export default {
-	title: 'Example/Button',
+	title: 'Controls/Button',
 	component: QButton,
 	tags: ['autodocs'],
 	argTypes: {

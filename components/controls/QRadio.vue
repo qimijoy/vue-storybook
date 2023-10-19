@@ -42,10 +42,14 @@ const props = defineProps({
 	},
 });
 
-const emit = defineEmits(['update:checkedValue']);
+const emit = defineEmits({
+	'update:checkedValue': (value) => true,
+});
 
 const handleClick = (event) => {
-	emit('update:checkedValue', event.target.value);
+	if (!props.disabled) {
+		emit('update:checkedValue', event.target.value);
+	}
 };
 </script>
 
