@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<div class="container header__container">
+		<div class="header__container">
 			<a :href="logoComputed.href" class="header__logo">
 				<img
 					:src="logoComputed.src"
