@@ -1,4 +1,4 @@
-import QButton from '../components/controls/QButton.vue';
+import QButton from '../components/UI/Controls/QButton.vue';
 
 export default {
 	title: 'Controls/Button',

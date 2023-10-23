@@ -1,4 +1,4 @@
-import QRadio from '../components/controls/QRadio.vue';
+import QRadio from '../components/UI/Controls/QRadio.vue';
 
 export default {
 	title: 'Controls/Radio',
