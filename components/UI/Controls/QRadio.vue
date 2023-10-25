@@ -118,7 +118,7 @@ const handleClick = (event) => {
 		}
 	}
 
-	&__input:disabled + &__span {
+	&__input:disabled:checked + &__span {
 		&::before {
 			background-color: grey;
 			border: 1px solid grey;
