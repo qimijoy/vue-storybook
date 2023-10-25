@@ -1,7 +1,6 @@
 const globals = require('globals');
 
 const babelParser = require('@babel/eslint-parser');
-const jsESLint = require('@eslint/js');
 const eslintConfig = require('@qimijoy/eslint-config/configs/primary');
 
 const prettier = require('eslint-plugin-prettier');
@@ -27,7 +26,7 @@ module.exports = [
 	},
 	{
 		files: ['**/*.js'],
-		ignores: ['**/dist/**/*'],
+		ignores: ['**/dist/**'],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
@@ -39,23 +38,22 @@ module.exports = [
 			},
 		},
 		rules: {
-			...jsESLint.configs.recommended.rules,
 			...eslintConfig.rules,
 		},
 	},
 	// VUE
 	{
 		files: ['**/*.vue'],
+		ignores: ['**/dist/**'],
 		languageOptions: {
 			ecmaVersion: 'latest',
-			parser: vueParser,
+			parser: vueParser, // <template>
 			parserOptions: {
-				parser: babelParser,
+				parser: babelParser, // <script>
 			},
 		},
 		plugins: { vue },
 		rules: {
-			...vue.configs.essential.rules,
 			...vueConfig.rules,
 		},
 	},
