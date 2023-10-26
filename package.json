@@ -1,6 +1,16 @@
 {
   "name": "@qimijoy/vue-storybook",
   "version": "0.0.1",
+  "description": "My personal Storybook of Vue-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qimijoy/vue-storybook.git"
+  },
+  "author": "qimijoy",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/qimijoyui.umd.js",
   "module": "./dist/qimijoyui.es.js",
