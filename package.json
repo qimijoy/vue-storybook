@@ -22,7 +22,7 @@
       "import": "./dist/qimijoyui.es.js",
       "require": "./dist/qimijoyui.umd.js"
     },
-    "./styles": "./dist/style.css"
+    "./dist/style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite",
