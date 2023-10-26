@@ -1,4 +1,4 @@
-import QInput from '../components/UI/Controls/QInput.vue';
+import QInput from '@/components/UI/Controls/QInput.vue';
 
 export default {
 	title: 'Controls/Input',

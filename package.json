@@ -1,7 +1,22 @@
 {
   "name": "vue-storybook",
-  "private": "true",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/qimijoyui.umd.js",
+  "module": "./dist/qimijoyui.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/qimijoyui.es.js",
+      "require": "./dist/qimijoyui.umd.js"
+    },
+    "./styles": "./dist/style.css"
+  },
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint ./"
@@ -16,10 +31,10 @@
     "@storybook/addon-interactions": "^7.5.1",
     "@storybook/addon-links": "^7.5.1",
     "@storybook/blocks": "^7.5.1",
-    "@storybook/builder-vite": "^7.5.1",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/vue3": "^7.5.1",
     "@storybook/vue3-vite": "^7.5.1",
+    "@vitejs/plugin-vue": "^4.4.0",
     "core-js": "^3.33.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
@@ -32,6 +47,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.5.1",
+    "vite": "^4.5.0",
     "vue-eslint-parser": "^9.3.2"
   },
   "peerDependencies": {

@@ -1,16 +1,16 @@
-const globals = require('globals');
+import globals from 'globals';
 
-const babelParser = require('@babel/eslint-parser');
-const eslintConfig = require('@qimijoy/eslint-config/configs/primary');
+import babelParser from '@babel/eslint-parser';
+import eslintConfig from '@qimijoy/eslint-config/configs/primary.js';
 
-const prettier = require('eslint-plugin-prettier');
-const prettierConfig = require('eslint-config-prettier');
+import prettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
-const vueParser = require('vue-eslint-parser');
-const vue = require('eslint-plugin-vue');
-const vueConfig = require('@qimijoy/eslint-config/configs/vueConfig');
+import vueParser from 'vue-eslint-parser';
+import vue from 'eslint-plugin-vue';
+import vueConfig from '@qimijoy/eslint-config/configs/vueConfig.js';
 
-module.exports = [
+export default [
 	{
 		linterOptions: {
 			noInlineConfig: true,
