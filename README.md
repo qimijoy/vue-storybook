@@ -7,6 +7,11 @@ npm ci
 npx husky install
 ```
 
+## Build
+```
+npm run build
+```
+
 ## Run Storybook
 ```
 npm run storybook

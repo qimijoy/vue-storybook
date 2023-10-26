@@ -1,5 +1,5 @@
 {
-  "name": "vue-storybook",
+  "name": "@qimijoy/vue-storybook",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/qimijoyui.umd.js",
