@@ -36,7 +36,7 @@ npm ci
 npx husky install
 ```
 
-## Storybook Build
+## Components Build
 ```
 npm run build
 ```
@@ -44,5 +44,22 @@ npm run build
 ## Run Storybook
 ```
 npm run storybook
+```
+
+## Build Storybook
+```
+npm run build-storybook
+```
+
+## Lint with ESLint
+
+```sh
+npm run lint
+```
+
+## Lint with Stylelint
+
+```sh
+npm run stylelint
 ```
 
