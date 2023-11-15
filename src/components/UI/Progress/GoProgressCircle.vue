@@ -32,10 +32,11 @@ const percentString = computed(() => `${props.percent}%`);
 </script>
 
 <style scoped lang="less">
-@import 'palette';
+@import '@/styles/_palette';
 
 .progress-circle {
 	position: relative;
+
 	width: 120px;
 	height: 120px;
 
@@ -45,22 +46,24 @@ const percentString = computed(() => `${props.percent}%`);
 
 	&__percent {
 		display: flex;
-		align-items: center;
-		justify-content: center;
 
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 
 		width: 100%;
 		height: 100%;
 
-		font-weight: bold;
+		font-weight: 700;
+
 		color: @primary;
+		align-items: center;
+		justify-content: center;
 	}
 
 	&__line {
 		stroke-dasharray: 100;
+
 		transition: 0.5s;
 	}
 }

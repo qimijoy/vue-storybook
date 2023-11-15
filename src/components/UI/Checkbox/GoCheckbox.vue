@@ -63,7 +63,7 @@ const handleClick = (event) => {
 </script>
 
 <style scoped lang="less">
-@import 'palette';
+@import '@/styles/_palette';
 
 .checkbox {
 	display: inline-flex;
@@ -78,18 +78,21 @@ const handleClick = (event) => {
 		display: inline-flex;
 		align-items: center;
 		user-select: none;
+
 		cursor: pointer;
 
-		&::before {
-			content: '';
+		&:before {
 			display: inline-block;
+
 			width: 24px;
 			height: 24px;
-			flex-shrink: 0;
-			flex-grow: 0;
+			margin-right: 10px;
+
 			border: 1px solid @grey;
 			border-radius: 6px;
-			margin-right: 10px;
+			content: '';
+			flex-shrink: 0;
+			flex-grow: 0;
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: 50% 50%;
@@ -97,42 +100,43 @@ const handleClick = (event) => {
 	}
 
 	&__input:checked + &__span {
-		&::before {
+		&:before {
 			border-color: @primary;
+
 			background-color: @primary;
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 		}
 	}
 
-	&__input:not(:disabled):not(:checked) + &__span {
-		&:hover::before {
+	&__input:focus + &__span {
+		&:before {
+			box-shadow: 0 7px 20px rgb(0 0 0 / 0.07);
+		}
+	}
+
+	&__input:disabled + &__span {
+		&:before {
+			background-color: @grey;
+			border: 1px solid @grey;
+		}
+	}
+
+	&__input:not(:disabled, :checked) + &__span {
+		&:hover:before {
 			border-color: @primary-hover;
 		}
 	}
 
 	&__input:not(:disabled):active + &__span {
-		&::before {
+		&:before {
 			background-color: @primary;
 			border: 1px solid @grey;
 		}
 	}
 
-	&__input:focus + &__span {
-		&::before {
-			box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
-		}
-	}
-
 	&__input:focus:not(:checked) + &__span {
-		&::before {
+		&:before {
 			border-color: @primary;
-		}
-	}
-
-	&__input:disabled + &__span {
-		&::before {
-			background-color: @grey;
-			border: 1px solid @grey;
 		}
 	}
 }

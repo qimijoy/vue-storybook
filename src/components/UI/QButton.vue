@@ -58,54 +58,58 @@ const onClickHandler = (event) => {
 <style lang="less" scoped>
 .q-button {
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+
 	min-width: 20px;
 	padding: 0.5em 1em;
 
 	font-family: inherit;
 	font-size: 16px;
-	color: #fff;
 	line-height: 1.5;
 
-	appearance: none;
+	color: #ffffff;
+	background: #4676d7;
 	border: 0;
 	border-radius: 5px;
-	background: #4676d7;
 
 	cursor: pointer;
 
 	transition: 0.2s ease-out;
+	align-items: center;
+	justify-content: center;
 
-	&_slim {
-		padding: 0.25em 0.5em;
-	}
-
-	&:hover:not(&_disabled) {
-		background: #1d49aa;
-	}
+	appearance: none;
 
 	&:focus:not(&_disabled) {
 		outline: none;
 		box-shadow: 0 0 0 2px #bac9ff;
 	}
 
+	&:hover:not(&_disabled) {
+		background: #1d49aa;
+	}
+
 	&:active:not(&_disabled) {
 		background: #0b3ba2;
+	}
+
+	&_slim {
+		padding: 0.25em 0.5em;
+	}
+
+	&_link {
+		text-decoration: none;
+
+		text-align: center;
 	}
 
 	&[disabled],
 	&_disabled {
 		color: #d2d5db;
 		background: #6c7589;
-		cursor: not-allowed;
 		outline: none;
-		box-shadow: none;
-	}
 
-	&_link {
-		text-decoration: none;
-		text-align: center;
+		cursor: not-allowed;
+		box-shadow: none;
 	}
 }
 </style>

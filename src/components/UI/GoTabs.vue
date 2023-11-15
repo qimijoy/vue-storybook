@@ -42,43 +42,50 @@ const clickOnTab = (tabName) => {
 </script>
 
 <style scoped lang="less">
-@import '../../../../gotuda/src/assets/styles/_palette';
+@import '@/styles/_palette';
 
 .tabs {
 	&__nav {
 		display: flex;
 		align-items: center;
+
 		margin-bottom: 20px;
 	}
 
 	&__nav-item {
-		height: 40px;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+
+		height: 40px;
 		margin-right: 10px;
-		border-radius: 7px;
-		cursor: pointer;
-		border: 1px solid @primary;
 		padding: 0 20px;
+
 		font-size: 15px;
 
+		border: 1px solid @primary;
+		border-radius: 7px;
+
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+
 		&:hover {
+			color: #ffffff;
 			background: @primary-hover;
-			color: #fff;
+
 			transition: 0.2s;
 		}
 	}
 
 	&__nav-item_selected {
+		color: #ffffff;
 		background: @primary;
-		color: #fff;
 	}
 
 	&__content {
 		padding: 20px;
+
+		background: #ffffff;
 		border-radius: 7px;
-		background: #fff;
 	}
 }
 </style>

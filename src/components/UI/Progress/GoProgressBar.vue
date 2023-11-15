@@ -26,27 +26,32 @@ const percentString = computed(() => `${props.percent}%`);
 </script>
 
 <style scoped lang="less">
-@import 'palette';
+@import '@/styles/_palette';
 
 .progress {
 	&__percent {
-		text-align: center;
-		color: @primary;
-		font-weight: bold;
-		user-select: none;
 		margin-bottom: 10px;
+
+		font-weight: 700;
+		text-align: center;
+
+		color: @primary;
+		user-select: none;
 	}
 }
 
 .progress-bar {
 	height: 15px;
-	border-radius: 4px;
+
 	background-color: @primary-hover;
+	border-radius: 4px;
 
 	&__filled {
 		height: 100%;
-		border-radius: 4px;
+
 		background-color: @primary;
+		border-radius: 4px;
+
 		transition: 0.5s;
 	}
 }

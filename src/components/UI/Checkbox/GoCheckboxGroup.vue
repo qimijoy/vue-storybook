@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import GoCheckbox from '@/components/controls/Checkbox/GoCheckbox.vue';
+import GoCheckbox from '@/components/UI/Checkbox/GoCheckbox.vue';
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -62,25 +62,25 @@ const check = (params) => {
 	&_direction-horizontal {
 		flex-direction: row;
 		align-items: center;
+
+		&__item {
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
 	}
 
 	&_direction-vertical {
 		flex-direction: column;
-	}
 
-	&_direction-horizontal &__item {
-		margin-right: 10px;
+		&__item {
+			margin-bottom: 10px;
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
-
-	&_direction-vertical &__item {
-		margin-bottom: 10px;
-
-		&:last-child {
-			margin-bottom: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }
