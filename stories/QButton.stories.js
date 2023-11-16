@@ -37,7 +37,7 @@ export default {
 		setup() {
 			return { args };
 		},
-		template: `<QButton v-bind="args" v-html="args.content"/>`,
+		template: `<QButton v-bind="args" v-html="args.content" />`,
 	}),
 };
 
