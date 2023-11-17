@@ -39,12 +39,16 @@ const emit = defineEmits({
 	},
 });
 
-const classes = computed(() => ({
-	'q-button': true,
-	'q-button_slim': props.slim,
-	'q-button_disabled': props.disabled,
-	'q-button_link': props.link,
-}));
+const classes = computed(() => {
+	const mainClass = 'q-button';
+
+	return {
+		[mainClass]: true,
+		[`${mainClass}_slim`]: props.slim,
+		[`${mainClass}_disabled`]: props.disabled,
+		[`${mainClass}_link`]: props.link,
+	};
+});
 
 const onClickHandler = (event) => {
 	if (props.disabled) {
