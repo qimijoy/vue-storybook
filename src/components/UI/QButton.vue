@@ -56,6 +56,8 @@ const onClickHandler = (event) => {
 </script>
 
 <style lang="less" scoped>
+@import '@/styles/_palette';
+
 .q-button {
 	display: inline-flex;
 
@@ -66,8 +68,8 @@ const onClickHandler = (event) => {
 	font-size: 16px;
 	line-height: 1.5;
 
-	color: #ffffff;
-	background: #4676d7;
+	color: @white;
+	background: @primary;
 	border: 0;
 	border-radius: 5px;
 
@@ -81,15 +83,15 @@ const onClickHandler = (event) => {
 
 	&:focus:not(&_disabled) {
 		outline: none;
-		box-shadow: 0 0 0 2px #bac9ff;
+		box-shadow: 0 0 0 2px @shadow-blue;
 	}
 
 	&:hover:not(&_disabled) {
-		background: #1d49aa;
+		background: @primary-hover;
 	}
 
 	&:active:not(&_disabled) {
-		background: #0b3ba2;
+		background: @primary-active;
 	}
 
 	&_slim {
@@ -104,8 +106,8 @@ const onClickHandler = (event) => {
 
 	&[disabled],
 	&_disabled {
-		color: #d2d5db;
-		background: #6c7589;
+		color: @grey;
+		background: @disabled;
 		outline: none;
 
 		cursor: not-allowed;
