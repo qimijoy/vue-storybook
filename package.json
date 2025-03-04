@@ -1,6 +1,6 @@
 {
   "name": "@qimijoy/vue-storybook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "My personal Storybook of Vue-components",
   "repository": {
     "type": "git",
