@@ -8,6 +8,11 @@ const preview = {
 				date: /Date$/,
 			},
 		},
+		docs: {
+			source: {
+				type: 'code',
+			},
+		},
 	},
 };
 

@@ -33,13 +33,11 @@ export default {
 		download: false,
 	},
 	render: (args) => ({
-		components: {
-			QButton,
-		},
+		components: { QButton },
 		setup() {
 			return { args };
 		},
-		template: `<QButton v-bind="args" v-html="args.content"></QButton>`,
+		template: `<QButton v-bind="args" v-html="args.content" />`,
 	}),
 };
 

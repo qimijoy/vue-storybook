@@ -1,13 +1,42 @@
 # vue-storybook
 My personal Storybook of Vue-components.
 
-## Installation
+## Component Usage
+You need to add this line in main.js:
 ```
-npm ci
-npx husky install
+import '@qimijoy/vue-storybook/dist/style.css';
 ```
 
-## Build
+### Local Installation
+In any .vue-file:
+```
+<template>
+  ...
+  <QButton>Sample text</QButton>
+  ...
+</template>
+
+<script setup>
+  ...
+  import { QButton } from '@qimijoy/vue-storybook';
+  ...
+</script>
+```
+
+### Global Installation
+Add this line in main.js:
+```
+import { QButton } from '@qimijoy/vue-storybook';
+import '@qimijoy/vue-storybook/dist/style.css';
+app.use(QButton);
+```
+
+## Storybook Installation for Development
+```
+npm ci
+```
+
+## Components Build
 ```
 npm run build
 ```
@@ -16,3 +45,21 @@ npm run build
 ```
 npm run storybook
 ```
+
+## Build Storybook
+```
+npm run build-storybook
+```
+
+## Lint with ESLint
+
+```sh
+npm run lint
+```
+
+## Lint with Stylelint
+
+```sh
+npm run stylelint
+```
+

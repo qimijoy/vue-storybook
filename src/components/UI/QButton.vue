@@ -8,104 +8,114 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+	import { computed } from 'vue';
 
-const props = defineProps({
-	slim: {
-		type: Boolean,
-		default: false,
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	link: {
-		type: Boolean,
-		default: false,
-	},
-	href: {
-		type: String,
-		default: '',
-	},
-	download: {
-		type: Boolean,
-		default: false,
-	},
-});
+	const props = defineProps({
+		slim: {
+			type: Boolean,
+			default: false,
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		link: {
+			type: Boolean,
+			default: false,
+		},
+		href: {
+			type: String,
+			default: '',
+		},
+		download: {
+			type: Boolean,
+			default: false,
+		},
+	});
 
-const emit = defineEmits({
-	click: () => {
-		return true;
-	},
-});
+	const emit = defineEmits({
+		click: () => {
+			return true;
+		},
+	});
 
-const classes = computed(() => ({
-	'q-button': true,
-	'q-button_slim': props.slim,
-	'q-button_disabled': props.disabled,
-	'q-button_link': props.link,
-}));
+	const classes = computed(() => {
+		const mainClass = 'q-button';
 
-const onClickHandler = (event) => {
-	if (props.disabled) {
-		event.preventDefault();
-	} else {
-		emit('click');
-	}
-};
+		return {
+			[mainClass]: true,
+			[`${mainClass}_slim`]: props.slim,
+			[`${mainClass}_disabled`]: props.disabled,
+			[`${mainClass}_link`]: props.link,
+		};
+	});
+
+	const onClickHandler = (event) => {
+		if (props.disabled) {
+			event.preventDefault();
+		} else {
+			emit('click');
+		}
+	};
 </script>
 
 <style lang="less" scoped>
-.q-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-width: 20px;
-	padding: 0.5em 1em;
+	@import '@/styles/_palette';
 
-	font-family: inherit;
-	font-size: 16px;
-	color: #fff;
-	line-height: 1.5;
+	.q-button {
+		display: inline-flex;
 
-	appearance: none;
-	border: 0;
-	border-radius: 5px;
-	background: #4676d7;
+		min-width: 20px;
+		padding: 0.5em 1em;
 
-	cursor: pointer;
+		font-family: inherit;
+		font-size: 16px;
+		line-height: 1.5;
 
-	transition: 0.2s ease-out;
+		color: @white;
+		background: @primary;
+		border: 0;
+		border-radius: 5px;
 
-	&_slim {
-		padding: 0.25em 0.5em;
+		cursor: pointer;
+
+		transition: 0.2s ease-out;
+		align-items: center;
+		justify-content: center;
+
+		appearance: none;
+
+		&:focus:not(&_disabled) {
+			outline: none;
+			box-shadow: 0 0 0 2px @shadow-blue;
+		}
+
+		&:hover:not(&_disabled) {
+			background: @primary-hover;
+		}
+
+		&:active:not(&_disabled) {
+			background: @primary-active;
+		}
+
+		&_slim {
+			padding: 0.25em 0.5em;
+		}
+
+		&_link {
+			text-decoration: none;
+
+			text-align: center;
+		}
+
+		&[disabled],
+		&_disabled {
+			color: @grey;
+			background: @disabled;
+			outline: none;
+
+			cursor: not-allowed;
+			box-shadow: none;
+		}
 	}
-
-	&:hover:not(&_disabled) {
-		background: #1d49aa;
-	}
-
-	&:focus:not(&_disabled) {
-		outline: none;
-		box-shadow: 0 0 0 2px #bac9ff;
-	}
-
-	&:active:not(&_disabled) {
-		background: #0b3ba2;
-	}
-
-	&[disabled],
-	&_disabled {
-		color: #d2d5db;
-		background: #6c7589;
-		cursor: not-allowed;
-		outline: none;
-		box-shadow: none;
-	}
-
-	&_link {
-		text-decoration: none;
-		text-align: center;
-	}
-}
 </style>
